@@ -2,7 +2,7 @@
 
 Adds a color strip to the top of your window to help discern between windows.
 
-![screenshot](rainbow-windows.png)
+![screenshot](https://github.com/vindvaki/atom-rainbow-windows/raw/master/rainbow-windows.png)
 
 ## Usage
 
