@@ -1,3 +1,6 @@
+## 0.2.1
+* Removed leftover console.log statement
+
 ## 0.2.0 - Configurability and persistence
 * Color bar is now enabled by default
 * Added configuration for whether it should be enabled by default

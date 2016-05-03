@@ -58,7 +58,6 @@ module.exports = RainbowWindows =
     '5px'
 
   borderColor: ->
-    console.log(@colorIndex)
     @colorList[@colorIndex]
 
   initStyle: ->
