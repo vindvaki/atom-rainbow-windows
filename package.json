@@ -4,9 +4,6 @@
   "version": "0.1.2",
   "description": "Adds a color strip to the top of your window",
   "keywords": [],
-  "activationCommands": {
-    "atom-workspace": "rainbow-windows:toggle"
-  },
   "repository": "https://github.com/vindvaki/atom-rainbow-windows",
   "license": "MIT",
   "engines": {
