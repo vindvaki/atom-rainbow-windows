@@ -6,4 +6,8 @@ Adds a color strip to the top of your window to help discern between windows.
 
 ## Usage
 
-Select `Rainbow Windows: Toggle` in the command palette (`cmd-shift-p` on mac, `ctrl-shift-p` on windows and linux) to toggle the color bar on the current window.
+This package exposes several commands in the command palette (`cmd-shift-p` on mac, `ctrl-shift-p` on windows and linux):
+
+- `Rainbow Windows: Toggle`: Toggle the color bar on the current window
+- `Rainbow Windows: Next Color`: Selects the next color for the current window
+- `Rainbow Windows: Previous Color`: Selects the previous color for the current window
