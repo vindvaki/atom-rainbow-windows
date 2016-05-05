@@ -1,3 +1,6 @@
+## 0.3.0
+* Made the color bar width configurable
+
 ## 0.2.1
 * Removed leftover console.log statement
 

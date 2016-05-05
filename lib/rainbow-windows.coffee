@@ -6,6 +6,12 @@ module.exports = RainbowWindows =
       description: 'Show the color bar automatically on new windows (you can still toggle it on a per window basis).'
       type: 'boolean'
       default: true
+    width:
+      description: 'The width of the color bar in pixels (between 1 and 20)'
+      type: 'integer'
+      default: 5
+      minimum: 1
+      maximum: 20
 
   subscriptions: null
   className: 'rainbow-windows'
@@ -17,6 +23,8 @@ module.exports = RainbowWindows =
     @colorIndex ?= atom.getCurrentWindow().id % @colorCount()
     @initSubscriptions()
     @initStyle()
+    atom.config.onDidChange 'rainbow-windows.width', (event) =>
+      @reload()
     if atom.config.get('rainbow-windows.enabledByDefault')
       @enable()
 
@@ -40,9 +48,6 @@ module.exports = RainbowWindows =
   bodyClassList: ->
     atom.window.document.body.classList
 
-  reload: ->
-    @updateStyle()
-
   nextColor: ->
     @colorIndex = (@colorIndex + 1) % @colorCount()
     @reload()
@@ -55,7 +60,7 @@ module.exports = RainbowWindows =
     @colorList.length
 
   borderWidth: ->
-    '5px'
+    "#{atom.config.get('rainbow-windows.width')}px"
 
   borderColor: ->
     @colorList[@colorIndex]
@@ -64,9 +69,9 @@ module.exports = RainbowWindows =
     @style = atom.window.document.createElement('style')
     @style.type = 'text/css'
     atom.window.document.head.appendChild(@style)
-    @updateStyle()
+    @reload()
 
-  updateStyle: ->
+  reload: ->
     @style.innerHTML = ".#{@className} { border-top: #{@borderWidth()} solid #{@borderColor()}; }"
 
   initSubscriptions: ->
